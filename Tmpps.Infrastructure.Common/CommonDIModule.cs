@@ -1,3 +1,5 @@
+using System.Reflection;
+using Microsoft.Extensions.Logging;
 using Tmpps.Infrastructure.Common.Configuration;
 using Tmpps.Infrastructure.Common.Configuration.Interfaces;
 using Tmpps.Infrastructure.Common.Cryptography;
@@ -8,17 +10,16 @@ using Tmpps.Infrastructure.Common.Foundation.Interfaces;
 using Tmpps.Infrastructure.Common.IO;
 using Tmpps.Infrastructure.Common.IO.Interfaces;
 using Tmpps.Infrastructure.Common.Logging.Extensions;
-using Microsoft.Extensions.Logging;
 
 namespace Tmpps.Infrastructure.Autofac.Configuration
 {
     public class CommonDIModule : IDIModule
     {
-        private System.Reflection.Assembly executeAssembly;
+        private Assembly executeAssembly;
         private string rootPath;
         private ILoggerFactory loggerFactory;
 
-        public CommonDIModule(System.Reflection.Assembly executeAssembly, string rootPath, ILoggerFactory loggerFactory)
+        public CommonDIModule(Assembly executeAssembly, string rootPath, ILoggerFactory loggerFactory)
         {
             this.executeAssembly = executeAssembly;
             this.rootPath = rootPath;

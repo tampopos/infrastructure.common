@@ -18,8 +18,9 @@ gulp.task('build', () => {
 gulp.task('test', () => {
   return gulp.src(tests, { read: false }).pipe(test());
 });
-gulp.task('publish', gulp.series('test'), () => {
+gulp.task('publish-inner', () => {
   return gulp
     .src(lib, { read: false })
     .pipe(build({ configuration: 'Release' }));
 });
+gulp.task('publish', gulp.series('test', 'publish-inner'));
