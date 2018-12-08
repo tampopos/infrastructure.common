@@ -26,7 +26,7 @@ namespace Tmpps.Infrastructure.Common.IO
             {
                 return path;
             }
-            path = Path.Combine(this.RootPath, path);
+            path = Path.GetFullPath(Path.Combine(this.RootPath, path));
             if (File.Exists(path))
             {
                 return path;
@@ -40,32 +40,12 @@ namespace Tmpps.Infrastructure.Common.IO
             {
                 return path;
             }
-            path = Path.Combine(this.RootPath, path);
+            path = Path.GetFullPath(Path.Combine(this.RootPath, path));
             if (Directory.Exists(path))
             {
                 return path;
             }
             return null;
-        }
-        /// <inheritdoc />
-        public bool ExistsFilePath(string path)
-        {
-            if (File.Exists(path))
-            {
-                return true;
-            }
-            path = Path.Combine(this.RootPath, path);
-            return File.Exists(path);
-        }
-        /// <inheritdoc />
-        public bool ExistsDirectoryPath(string path)
-        {
-            if (Directory.Exists(path))
-            {
-                return true;
-            }
-            path = Path.Combine(this.RootPath, path);
-            return Directory.Exists(path);
         }
     }
 }

@@ -21,17 +21,5 @@ namespace Tmpps.Infrastructure.Common.IO.Interfaces
         /// <param name="path"></param>
         /// <returns></returns>
         string ResolveDirectoryPath(string path);
-        /// <summary>
-        /// ファイルの存在チェック
-        /// </summary>
-        /// <param name="path"></param>
-        /// <returns></returns>
-        bool ExistsFilePath(string path);
-        /// <summary>
-        /// ディレクトリの存在チェック
-        /// </summary>
-        /// <param name="path"></param>
-        /// <returns></returns>
-        bool ExistsDirectoryPath(string path);
     }
 }
