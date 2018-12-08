@@ -38,7 +38,7 @@ namespace Tmpps.Infrastructure.Common.IO
         {
             if (Directory.Exists(path))
             {
-                return path;
+                return Path.GetFullPath(path);
             }
             var combinePath = Path.Combine(this.RootPath, path);
             if (Directory.Exists(combinePath))
